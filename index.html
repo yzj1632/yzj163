@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>艾泽拉斯渔夫</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap');
+      
+      body {
+        font-family: 'Lato', sans-serif;
+        background-color: #0f172a;
+        color: #e2e8f0;
+        overflow: hidden; /* Prevent scrolling on mobile during game */
+      }
+      
+      .font-fantasy {
+        font-family: 'Cinzel', serif;
+      }
+
+      /* Animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      
+      @keyframes splash {
+        0% { transform: scale(1) translateY(0); }
+        10% { transform: scale(0.9) translateY(10px) rotate(-5deg); }
+        20% { transform: scale(1.1) translateY(-15px) rotate(5deg); }
+        30% { transform: scale(0.95) translateY(5px) rotate(-3deg); }
+        40% { transform: scale(1.05) translateY(-5px) rotate(3deg); }
+        50% { transform: scale(1) translateY(0); }
+        100% { transform: scale(1) translateY(0); }
+      }
+
+      @keyframes ripple {
+        0% { transform: scale(0.2); opacity: 0; border-width: 3px; }
+        5% { opacity: 0.5; }
+        100% { transform: scale(3); opacity: 0; border-width: 0px; }
+      }
+
+      @keyframes nibble {
+        0%, 85% { transform: rotate(0deg) translateY(0); }
+        86% { transform: rotate(-3deg) translateY(2px); }
+        88% { transform: rotate(3deg) translateY(-1px); }
+        90% { transform: rotate(-5deg) translateY(3px); }
+        92% { transform: rotate(2deg) translateY(0); }
+        100% { transform: rotate(0deg) translateY(0); }
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      .animate-splash {
+        animation: splash 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+      }
+
+      .animate-ripple {
+        animation: ripple 2.5s ease-out infinite;
+      }
+      
+      .animate-nibble {
+        animation: nibble 4.5s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
